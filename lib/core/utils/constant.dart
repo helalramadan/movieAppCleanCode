@@ -17,11 +17,12 @@ class Constant {
   static const String topRatedMoiesPath =
       '${Constant.baseUrl}/movie/top_rated?api_key=${Constant.apiKey}';
 
-  static String moviesDetailsPath(MovieDetailsParameter parameter) =>
-      '${Constant.baseUrl}/movie/$parameter?api_key=${Constant.apiKey}';
+  static String moviesDetailsPath(MovieDetailsParameter parameter) {
+    return 'https://api.themoviedb.org/3/movie/${parameter.toString()}?api_key=${Constant.apiKey}';
+  }
 
   static String moviesRecommendationsPath(RecommendationParameter parameter) =>
-      '${Constant.baseUrl}/movie/${parameter}/recommendations?api_key=${Constant.apiKey}';
+      'https://api.themoviedb.org/3/movie/${parameter.toString()}/recommendations?api_key=${Constant.apiKey}';
 
   static const String accessToken =
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOWYyNDQzN2VmYTE1YzUzZDc5MGQxYjA4MWRmM2MxMCIsInN1YiI6IjYzOGExOWMzMWI3MjJjMDBhYjdlMmE0OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Bd58k2LxCJlSNNRvaFWiaG-UTbp8AhJsOSAv2nttO8c';

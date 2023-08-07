@@ -7,7 +7,7 @@ class MovieDetailsModel extends MovieDetails {
     required title,
     required voteAverage,
     required voteCount,
-    required overView,
+    required overview,
     required id,
     required genres,
     required releaseDate,
@@ -16,7 +16,7 @@ class MovieDetailsModel extends MovieDetails {
           title: title,
           voteAverage: voteAverage,
           voteCount: voteCount,
-          overView: overView,
+          overview: overview,
           id: id,
           genres: genres,
           releaseDate: releaseDate,
@@ -27,11 +27,12 @@ class MovieDetailsModel extends MovieDetails {
       backdropPath: json['backdrop_path'],
       title: json['title'],
       id: json['id'],
-      voteAverage: json['vote_average'].toDouble(),
-      voteCount: json['vote_count'],
-      overView: json['overview'],
+      voteAverage: (json['vote_average']).toDouble(),
+      voteCount: (json['vote_count']).toInt(),
+      overview: json['overview'],
       releaseDate: json['release_date'],
-      genres: List.castFrom(json['genres'].map((e) => GenresModel.fromJson(e))),
+      genres: List<GenresModel>.from(
+          json['genres'].map((e) => GenresModel.fromJson(e))),
     );
   }
 }

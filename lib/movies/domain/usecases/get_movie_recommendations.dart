@@ -21,7 +21,7 @@ class GetMoiveRecommendationUseCase
 class RecommendationParameter extends Equatable {
   final int movieId;
 
-  const RecommendationParameter({required this.movieId});
+  const RecommendationParameter(this.movieId);
 
   @override
   List<Object> get props => [movieId];
